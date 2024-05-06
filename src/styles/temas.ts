@@ -4,6 +4,7 @@ export const TEMAS = extendTheme({
     colors: {
         gray: {
             100: "#F9F9F9",
+            300: "D2D2D2"
         },
         
         purple: {

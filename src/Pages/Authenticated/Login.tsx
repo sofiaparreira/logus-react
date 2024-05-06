@@ -1,39 +1,36 @@
+
 import { VStack, Image, Text, Heading, Box, FormControl, Input, Button, Link } from "native-base"
 import { TouchableOpacity } from "react-native";
 import { TEMAS } from '../../styles/temas';
 import Logo from '../../assets/logo.jpg'
 import { Title } from "../../components/Title";
-import { InputDefault } from "../../components/InputDefault";
 
 export default function SingUp1() {
     return (
         <VStack flex={1} alignItems='center' p={5} fontSize='md' >
-            <Heading style={{ marginTop: 72, marginBottom: 48 }}>Cadastre-se</Heading>
+            <Heading style={{ marginVertical: 64 }}>Bem vindo de volta</Heading>
             <Image
-                style={{ width: 240, height: 100, marginBottom: 48 }}
-                source={Logo} alt='Logo do Lógus da tela de Cadastro'
+                style={{ width: 240, height: 100 }}
+                source={Logo} alt='Logo do Lógus da tela de Login'
             />
-        
+            <Title>Cadastre-se</Title>
 
             <Box style={{ marginTop: 24, marginBottom: 8 }}>
                 <FormControl>
                     <FormControl.Label>E-mail</FormControl.Label>
-                    <InputDefault/>
+                    <Input />
 
                     <FormControl.Label>Senha</FormControl.Label>
-                    <InputDefault/>
-
-                    <FormControl.Label>Confirmar senha</FormControl.Label>
-                    <InputDefault/>
-m,
+                    <Input />
+                        
                 </FormControl>
             </Box>
+            <Link alignSelf="flex-start" style={{ marginBottom: 48 }}>Esqueci minha senha</Link>
             <Button
                 backgroundColor='purple.500'
                 w='100%'
                 borderRadius='lg'
                 marginBottom={4}
-                marginTop={16}
             >
                 Cadastrar
             </Button>
