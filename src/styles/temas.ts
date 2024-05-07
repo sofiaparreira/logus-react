@@ -15,7 +15,9 @@ export const TEMAS = extendTheme({
             600: '#5A1B8D',
         },
         white: '#fff',
-        black: '#000'
+        black: '#000',
+        red: '#FF0000',
+        green: '#228B22'
     },
 
     fontSizes: {
