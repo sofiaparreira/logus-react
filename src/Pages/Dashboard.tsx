@@ -2,14 +2,22 @@ import React from "react";
 import { VStack, View, Image, Text, Box, HStack, Input, ScrollView } from "native-base";
 import { TouchableOpacity, TextInput } from "react-native";
 
+//COMPONENTES
+import PrimaryCardDashboard from "../components/Cards/PrimaryCardDashboard";
+import SecundaryCardDashboard from "../components/Cards/SecundaryCardDashboard";
+import TasksDashboard from "../components/Cards/TasksDashboard";
+
 //IMPORT ICONES E IMAGENS
 import MenuIcon from '../assets/menuIcon.png';
 import ProfileIcon from '../assets/profileIcon.png'
-
-import PrimaryCardDashboard from "../components/Cards/PrimaryCardDashboard";
 import ResumeIcon from '../assets/resumeIcon.png'
-import SecundaryCardDashboard from "../components/Cards/SecundaryCardDashboard";
-import TasksDashboard from "../components/Cards/TasksDashboard";
+import ExerciseIcon from '../assets/exerciseIcon.png'
+import ApresentacaoIcon from '../assets/apresentacaoIcon.png'
+import ChatIcon from '../assets/chatIcon.png'
+import PomodoroIcon from '../assets/pomodoroIcon.png'
+import AgendaIcon from '../assets/agendaIcon.png'
+
+
 
 export default function Dashboard() {
     return (
@@ -59,20 +67,26 @@ export default function Dashboard() {
 
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <SecundaryCardDashboard 
+                        img={AgendaIcon}
                         text={'Agenda'}
+             
                     />
-                    <SecundaryCardDashboard
+                    <SecundaryCardDashboard 
+                        img={PomodoroIcon}
                         text={'Pomodoro'}
+             
                     />
                     <SecundaryCardDashboard 
-                        text={'Ruido Branco'}
+                        img={AgendaIcon}
+                        text={'Agenda'}
+             
                     />
                     <SecundaryCardDashboard 
-                        text={'Chat'}
+                        img={AgendaIcon}
+                        text={'Agenda'}
+             
                     />
-                    <SecundaryCardDashboard 
-                        text={'Estatísticas'}
-                    />
+                    
 
                 </ScrollView>
 
