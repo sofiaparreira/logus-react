@@ -11,8 +11,8 @@ export default function SecundaryCardDashboard({text, img}) {
                     shadowOpacity: 0.3,
                     shadowRadius: 4,
                     alignItems: 'center',
-                    justifyContent: 'center', // Add this line
-                    overflow: 'hidden' // Add this line to ensure the image doesn't overflow
+                    justifyContent: 'center',
+                    overflow: 'hidden' 
                 }}   
                 
                 bg={'gray.100'}
@@ -20,9 +20,10 @@ export default function SecundaryCardDashboard({text, img}) {
                 mx={2}
             >
                 <Image 
+                    alt="Icone Buttons"
                     source={img} 
-                    resizeMode="contain" // Add this line to ensure the image fits within the Box
-                    style={{ flex: 1 }} // Add this line to make the image take up all available space
+                    resizeMode="contain" 
+                    style={{ flex: 1 }} 
                 />
             </Box>
 

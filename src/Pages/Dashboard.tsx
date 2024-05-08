@@ -21,7 +21,7 @@ import AgendaIcon from '../assets/agendaIcon.png'
 
 export default function Dashboard() {
     return (
-        <View bg='purple.500' paddingTop={16}>
+        <ScrollView bg='purple.500' paddingTop={16}>
             <VStack paddingX={4} h={32} justifyContent="flex-start">
                 <Box flex={1} flexDirection={'row'} justifyContent={'space-between'} marginBottom={'16px'}>
                     <TouchableOpacity>
@@ -39,7 +39,6 @@ export default function Dashboard() {
                         flex: 1, paddingLeft: 24, paddingVertical: 32,
                         borderRadius: 28, borderWidth: 2, borderColor: 'gray',
                         fontSize: 16
-
                     }}
 
                     placeholder="Pesquise por resumos, atividades, slides ..."
@@ -48,7 +47,8 @@ export default function Dashboard() {
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <HStack marginTop={4} justifyContent={'space-around'}>
                         <PrimaryCardDashboard
-                            img={ResumeIcon}
+         
+         img={ResumeIcon}
                             text={'Resumos'}
                         />
                         <PrimaryCardDashboard
@@ -87,7 +87,6 @@ export default function Dashboard() {
              
                     />
                     
-
                 </ScrollView>
 
                 <View mt={8} bg={'gray.100'} borderRadius={'3xl'} px={4} py={6}>
@@ -102,10 +101,7 @@ export default function Dashboard() {
                         <Text fontSize={'4xl'} fontWeight={'bold'} color={'purple.400'}>Agenda</Text>
                     </Box>
                 </View>
-
-
-
             </VStack>
-        </View>
+        </ScrollView>
     );
 }
