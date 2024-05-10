@@ -16,12 +16,14 @@ import ApresentacaoIcon from '../assets/apresentacaoIcon.png'
 import ChatIcon from '../assets/chatIcon.png'
 import PomodoroIcon from '../assets/pomodoroIcon.png'
 import AgendaIcon from '../assets/agendaIcon.png'
+import Sidebar from "../components/nav/Sidebar";
 
 
 
 export default function Dashboard() {
     return (
         <ScrollView bg='purple.500' paddingTop={16}>
+           
             <VStack paddingX={4} h={32} justifyContent="flex-start">
                 <Box flex={1} flexDirection={'row'} justifyContent={'space-between'} marginBottom={'16px'}>
                     <TouchableOpacity>
@@ -102,6 +104,7 @@ export default function Dashboard() {
                     </Box>
                 </View>
             </VStack>
+           
         </ScrollView>
     );
 }

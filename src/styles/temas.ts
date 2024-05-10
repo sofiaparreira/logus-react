@@ -29,6 +29,14 @@ export const TEMAS = extendTheme({
         xl: 24,
         "2xl": '28px',
         "3xl": '32px',
+    },
+
+    borderRadius: {
+        xs: 8,
+        sm: 12,
+        md: 16,
+        lg: 20,
+        xl: 32
     }
 
     
