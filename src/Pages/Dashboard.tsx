@@ -20,10 +20,10 @@ import Sidebar from "../components/nav/Sidebar";
 
 
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
     return (
-        <ScrollView bg='purple.500' paddingTop={16}>
-           
+        <ScrollView bg='purple.500'>
+
             <VStack paddingX={4} h={32} justifyContent="flex-start">
                 <Box flex={1} flexDirection={'row'} justifyContent={'space-between'} marginBottom={'16px'}>
                     <TouchableOpacity>
@@ -48,47 +48,57 @@ export default function Dashboard() {
 
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <HStack marginTop={4} justifyContent={'space-around'}>
-                        <PrimaryCardDashboard
-         
-         img={ResumeIcon}
-                            text={'Resumos'}
-                        />
-                        <PrimaryCardDashboard
-                            img={ResumeIcon}
-                            text={'Exercícios'}
 
-                        />
-                        <PrimaryCardDashboard
-                            img={ResumeIcon}
-                            text={'Apresentações'}
+                    <TouchableOpacity  onPress={() => navigation.navigate('Resumos')}>
+                            <PrimaryCardDashboard
+                                img={ResumeIcon}
+                                text={'Resumos'}
 
-                        />
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <PrimaryCardDashboard
+                                img={ResumeIcon}
+                                text={'Exercícios'}
+
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <PrimaryCardDashboard
+                                img={ResumeIcon}
+                                text={'Apresentações'}
+                            />
+                        </TouchableOpacity>
                     </HStack>
 
                 </ScrollView>
 
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <SecundaryCardDashboard 
+                    <TouchableOpacity>
+                        <SecundaryCardDashboard
+                            img={AgendaIcon}
+                            text={'Agenda'}
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('PomodoroMethod')}>
+                        <SecundaryCardDashboard
+                            img={PomodoroIcon}
+                            text={'Pomodoro'}
+                        />
+                    </TouchableOpacity>
+                    <SecundaryCardDashboard
                         img={AgendaIcon}
                         text={'Agenda'}
-             
+
                     />
-                    <SecundaryCardDashboard 
-                        img={PomodoroIcon}
-                        text={'Pomodoro'}
-             
-                    />
-                    <SecundaryCardDashboard 
+                    <SecundaryCardDashboard
                         img={AgendaIcon}
                         text={'Agenda'}
-             
+
                     />
-                    <SecundaryCardDashboard 
-                        img={AgendaIcon}
-                        text={'Agenda'}
-             
-                    />
-                    
+
                 </ScrollView>
 
                 <View mt={8} bg={'gray.100'} borderRadius={'3xl'} px={4} py={6}>
@@ -104,7 +114,7 @@ export default function Dashboard() {
                     </Box>
                 </View>
             </VStack>
-           
+
         </ScrollView>
     );
 }

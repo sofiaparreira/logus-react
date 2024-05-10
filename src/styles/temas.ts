@@ -5,7 +5,8 @@ export const TEMAS = extendTheme({
         gray: {
             100: "#F0F1F5",
             200: "#F9F9F9",
-            300: "D2D2D2"
+            300: "D2D2D2",
+            400: "#484848"
         },
         
         purple: {
