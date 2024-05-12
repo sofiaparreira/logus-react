@@ -1,5 +1,5 @@
 import { Input } from "native-base"
-export function InputDefault(){
+export function InputDefault(onChangeText){
     return(
         <Input
         size='lg'
@@ -7,7 +7,7 @@ export function InputDefault(){
         h='40px'
         borderRadius='lg'
         bgColor='gray.300'
-
+            onChangeText={onChangeText}
 
     />
     )

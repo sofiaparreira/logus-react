@@ -8,6 +8,7 @@ import Logo from '../../assets/logo.jpg';
 export default function SignUp1({ navigation }) {
     const [password, setPassword] = useState("");
     const [passwordInformation, setPasswordInformation] = useState({ message: "", color: "" });
+    const [user, setUser] = useState('')
 
     // Verificação de senha forte ou fraca
     const verifyPassword = (text) => {
@@ -32,6 +33,7 @@ export default function SignUp1({ navigation }) {
         setPassword(text);
         verifyPassword(text);
     };
+
 
     return (
         <VStack flex={1} alignItems='center' p={8} bg={'white'}>
