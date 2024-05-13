@@ -4,10 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { HStack, ScrollView, VStack, View, Text, Input } from "native-base";
 
 //COMPONENTES
-import TitleFuncionalidades from "../components/Text/TitleFuncionalidades";
-import Topbar from "../components/nav/Topbar";
-import ButtonPurpleDefault from "../components/Buttons/ButtonPurpleDefault";
-import Timer from "../components/Timer";
+import TitleFuncionalidades from "../../components/Text/TitleFuncionalidades";
+import Topbar from "../../components/nav/Topbar";
+import ButtonPurpleDefault from "../../components/Buttons/ButtonPurpleDefault";
+import Timer from "../../components/Timer";
 
 
 export default function PomodoroMethod() {
