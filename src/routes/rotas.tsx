@@ -7,7 +7,6 @@ import SignUp1 from "../Pages/Authenticated/SingUp1";
 import Dashboard from "../Pages/Dashboard";
 import Resumos from '../Pages/Resumos'
 import PomodoroMethod from '../Pages/PomodoroMethod'
-import Sidebar from '../components/nav/Sidebar'
 const Stack = createNativeStackNavigator(); // Chame createNativeStackNavigator para criar o navegador de pilha
 
 export default function Rotas() {
@@ -19,7 +18,6 @@ export default function Rotas() {
                 <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
                 <Stack.Screen name="Resumos" component={Resumos} options={{ headerShown: false}} />
                 <Stack.Screen name="PomodoroMethod" component={PomodoroMethod} options={{ headerShown: false}} />
-                <Stack.Screen name="Sidebar" component={Sidebar} options={{ headerShown: false}} />
 
             </Stack.Navigator>
         </NavigationContainer>

@@ -16,7 +16,6 @@ import ApresentacaoIcon from '../assets/apresentacaoIcon.png'
 import ChatIcon from '../assets/chatIcon.png'
 import PomodoroIcon from '../assets/pomodoroIcon.png'
 import AgendaIcon from '../assets/agendaIcon.png'
-import Sidebar from "../components/nav/Sidebar";
 
 
 
