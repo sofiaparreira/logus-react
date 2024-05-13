@@ -26,7 +26,7 @@ export default function Dashboard({ navigation }) {
 
             <VStack paddingX={4} h={32} justifyContent="flex-start" marginTop={12}>
                 <Box flex={1} flexDirection={'row'} justifyContent={'space-between'} marginBottom={'16px'}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Sidebar')}>
                         <Image w={12} h={12} source={MenuIcon} />
                     </TouchableOpacity>
 

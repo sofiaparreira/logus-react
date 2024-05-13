@@ -7,6 +7,7 @@ import { HStack, ScrollView, VStack, View, Text, Input } from "native-base";
 import TitleFuncionalidades from "../components/Text/TitleFuncionalidades";
 import Topbar from "../components/nav/Topbar";
 import ButtonPurpleDefault from "../components/Buttons/ButtonPurpleDefault";
+import Timer from "../components/Timer";
 
 
 export default function PomodoroMethod() {
@@ -18,9 +19,7 @@ export default function PomodoroMethod() {
                     props={'Método Pomodoro'}
                 />
                 <Input marginTop={8} bg={'gray.100'} borderColor={'coolGray.200'} borderWidth={2} width={72} margin={'auto'} borderRadius={24} h={10} placeholder="Selecione sua tarefa" fontSize={'md'} textAlign={'center'}/>
-                <ButtonPurpleDefault 
-                    textButton={'Start'}
-                />
+                <Timer />
             </ScrollView>
         </View>
     )
