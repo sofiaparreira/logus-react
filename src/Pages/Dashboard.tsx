@@ -75,7 +75,7 @@ export default function Dashboard({ navigation }) {
                 </ScrollView>
 
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Agenda')}>
                         <SecundaryCardDashboard
                             img={AgendaIcon}
                             text={'Agenda'}
