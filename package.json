@@ -20,13 +20,11 @@
     "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-native": "0.73.6",
-<<<<<<< HEAD
-    "react-native-linear-gradient": "^2.8.3",
+
     "react-native-safe-area-context": "4.8.2",
-=======
+
     "react-native-modal": "^13.0.1",
-    "react-native-safe-area-context": "^4.8.2",
->>>>>>> d0545d49b5da315d1f3bab9f6693e5e5af248075
+
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
     "react-native-web": "~0.19.10",
