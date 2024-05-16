@@ -43,6 +43,7 @@ export default function SignUp1({ navigation }) {
                 source={Logo}
                 alt='Logo do Lógus da tela de Cadastro'
             />
+
             <Box style={{ marginTop: 24, marginBottom: 8 }}>
                 <FormControl>
                     <FormControl.Label>E-mail ou matrícula</FormControl.Label>
@@ -61,15 +62,18 @@ export default function SignUp1({ navigation }) {
                     <InputDefault />
                 </FormControl>
             </Box>
+
             <Button backgroundColor='purple.500' w='100%' borderRadius='lg' marginBottom={4}>
                 Cadastrar
             </Button>
+
             <Box style={{ flex: 1, flexDirection: 'row' }}>
                 <Text>Já tenho cadastro? </Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                     <Text color='purple.300'>Login</Text>
                 </TouchableOpacity>
             </Box>
+            
         </VStack>
     );
 }
