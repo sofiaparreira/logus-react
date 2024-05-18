@@ -20,7 +20,7 @@ export default function Topbar() {
   const navigation = useNavigation<DashboardScreenNavigationProp>();
 
   return (
-    <VStack paddingTop={8} height={120} justifyContent="flex-start" px={4}>
+    <VStack paddingTop={10} height={120} justifyContent="flex-start" px={4}>
       <Box flexDirection={'row'} alignItems="center" justifyContent={'space-between'} marginBottom={16}>
         <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
           <Image width={8} height={8} source={ArrowLeft} />

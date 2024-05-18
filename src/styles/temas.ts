@@ -15,8 +15,9 @@ export const TEMAS = extendTheme({
             200: '#B4ADEA',
             300: '#6E48A3',
             400: '#533680',
-            500: '#820AD1',
+            500: 'rgb(109 40 217)',
             600: '#5A1B8D',
+         
         },
         white: '#fff',
         black: '#000',
