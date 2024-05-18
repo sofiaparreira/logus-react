@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     },
     boxButtons: {
         flexDirection: 'row',
-        justifyContent: 'center', // Center the button
+        justifyContent: 'center', 
         alignItems: 'center',
-        marginTop: 20, // Add some top margin
+        marginTop: 20, 
     }
 });

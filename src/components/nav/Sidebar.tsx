@@ -7,13 +7,13 @@ import { flexbox } from "native-base/lib/typescript/theme/styled-system";
 export default function Sidebar() {
   return (
     <View style={styles.sidebar}>
-        <Box>
+        <Box >
             <Image />
             <Text style={styles.title}>Usuário</Text>
         </Box>
         <Box>
             <Image />
-            <Text>teste</Text>
+            <Text >teste</Text>
         </Box>
         <Box>
             <Image />
@@ -21,7 +21,7 @@ export default function Sidebar() {
         </Box>
         <Box>
             <Image />
-            <Text>teste</Text>
+            <Text >teste</Text>
         </Box>
         <Box>
             <Image />
@@ -39,12 +39,15 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 32,
         borderBottomEndRadius: 32,
         flexDirection: 'column',  
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingLeft: 32,
     },
     title: {
         fontSize: 32,
         marginTop: 32,
         fontWeight: 'bold',
-    }
+        textAlign: "center",
+    },
+
 });
 
