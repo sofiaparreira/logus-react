@@ -5,6 +5,8 @@ import { InputDefault } from "../../components/InputDefault";
 import { HeadingCadastro } from "../../components/Text/HeadingCadastro";
 import Logo from '../../assets/logo.jpg';
 
+import axios from "../../../src/services/api"
+
 export default function SignUp1({ navigation }) {
     const [password, setPassword] = useState("");
     const [passwordInformation, setPasswordInformation] = useState({ message: "", color: "" });
