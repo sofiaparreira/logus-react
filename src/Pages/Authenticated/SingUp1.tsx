@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { VStack, Image, Text, Box, FormControl, Button, Link, Input } from "native-base";
-import { TouchableOpacity } from "react-native";
+import { TextInput, TouchableOpacity } from "react-native";
 import { InputDefault } from "../../components/InputDefault";
 import { HeadingCadastro } from "../../components/Text/HeadingCadastro";
 import Logo from '../../assets/logo.jpg';
@@ -49,7 +49,11 @@ export default function SignUp1({ navigation }) {
             <Box style={{ marginTop: 24, marginBottom: 8 }}>
                 <FormControl>
                     <FormControl.Label>E-mail ou matrícula</FormControl.Label>
-                    <InputDefault />
+                    <InputDefault>
+                        <TextInput
+                            value={user}
+                        />
+                    </InputDefault>
                     <FormControl.Label>Senha</FormControl.Label>
                     <Input
                         size='lg'
