@@ -1,14 +1,18 @@
-
+import React, { useState } from "react";
 import { VStack, Image, Text, Heading, Box, FormControl, Input, Button, Link } from "native-base"
 import { TouchableOpacity } from "react-native";
 import { TEMAS } from '../../styles/temas';
 import Logo from '../../assets/logo.jpg'
 import { HeadingCadastro } from "../../components/Text/HeadingCadastro";
 import { baseFontSize } from "native-base/lib/typescript/theme/tools";
-import { InputDefault } from "../../components/InputDefault";
+
+import  InputDefault  from "../../components/InputDefault";
 
 
 export default function Login({ navigation }) {
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
+
     return (
         <VStack flex={1} alignItems='center' p={8} bg={'white'}  >
             <HeadingCadastro children={'Entre'} />
@@ -21,10 +25,10 @@ export default function Login({ navigation }) {
             <Box style={{ marginTop: 24, marginBottom: 8 }}>
                 <FormControl>
                     <FormControl.Label>E-mail</FormControl.Label>
-                    <InputDefault/>
+                    <InputDefault value={user} onChangeText={setUser}/>
 
                     <FormControl.Label>Senha</FormControl.Label>
-                    <InputDefault/>
+                    <InputDefault value={password} onChangeText={setPassword}/>
                         
                 </FormControl>
             </Box>
