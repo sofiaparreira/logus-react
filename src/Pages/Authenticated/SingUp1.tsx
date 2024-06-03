@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { VStack, Image, Text, Box, FormControl, Button, Link, Input } from "native-base";
 import { TextInput, TouchableOpacity } from "react-native";
 
-import InputDefault  from "../../components/InputDefault";
+import InputDefault  from "../../components/InputDefault";//tirei as chaves{}
 
 import { HeadingCadastro } from "../../components/Text/HeadingCadastro";
 import Logo from '../../assets/logo.jpg';
@@ -11,6 +11,7 @@ import axios from "../../../src/services/api"
 
 export default function SignUp1({ navigation }) {
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordInformation, setPasswordInformation] = useState({ message: "", color: "" });
     const [user, setUser] = useState('')
 
@@ -70,7 +71,7 @@ export default function SignUp1({ navigation }) {
                     <Text marginBottom={2} color={passwordInformation.color}>{passwordInformation.message}</Text>
 
                     <FormControl.Label>Confirmar senha</FormControl.Label>
-                    <InputDefault value={password} onChangeText={setPassword}/>
+                    <InputDefault value={confirmPassword} onChangeText={setConfirmPassword}/>
 
                 </FormControl>
             </Box>

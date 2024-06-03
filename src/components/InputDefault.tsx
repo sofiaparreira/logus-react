@@ -1,7 +1,7 @@
 import React from "react";
 import { Input } from "native-base"
 //export function
-const InputDefault = ({onChangeText, value}) => {
+const InputDefault = ({onChangeText, value}) => { //trocar para funcao caso de errado
     return(
         <Input
             size='lg'
