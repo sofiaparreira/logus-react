@@ -8,6 +8,7 @@ import { HeadingCadastro } from "../../components/Text/HeadingCadastro";
 import Logo from '../../assets/logo.jpg';
 
 import axios from "../../../src/services/api"
+import get from "lodash";
 
 export default function SignUp1({ navigation }) {
     const [password, setPassword] = useState("");
@@ -31,7 +32,33 @@ export default function SignUp1({ navigation }) {
         }
     };
     
-    
+    /*
+    const handleSubmit = async () => {
+        let formErrors = false;
+
+        if (user.length < 3 || user.length > 255) {
+            Toast.show({ type: 'warn', text1: 'O nome deve ter entre 3 e 255 caracteres.' });
+            formErrors = true;
+        }
+        if (password !== confirmPassword) {
+            Toast.show({ type: 'warn', text1: 'A senha e a confirmação de senha não coincidem.' });
+            formErrors = true;
+        }
+
+        if (formErrors) return;
+
+        try {
+            await axios.post('/users', {
+                user,
+                password,
+            });
+            Toast.show({ type: 'success', text1: 'Registrado com sucesso!' });
+            navigation.navigate('Login'); // Navigate to the login screen
+        } catch (err) {
+            const errors = err.response?.data?.errors || [];
+            errors.forEach((error: string) => Toast.show({ type: 'error', text1: error }));
+        }
+    }*/
 
     // Manipulador de evento para o campo de senha
     const handlePasswordChange = (text) => {
@@ -76,7 +103,7 @@ export default function SignUp1({ navigation }) {
                 </FormControl>
             </Box>
 
-            <Button backgroundColor='purple.500' w='100%' borderRadius='lg' marginBottom={4}>
+            <Button backgroundColor='purple.500' w='100%' borderRadius='lg' marginBottom={4} >{/*onPress={handleSubmit}*/}
                 Cadastrar
             </Button>
 
