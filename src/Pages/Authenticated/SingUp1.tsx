@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { VStack, Image, Text, Box, FormControl, Button, Link, Input } from "native-base";
-import { TextInput, TouchableOpacity } from "react-native";
+import { TextInput, TouchableOpacity, Alert } from "react-native";
 
 import InputDefault  from "../../components/InputDefault";//tirei as chaves{}
 
@@ -11,13 +11,17 @@ import axios from "../../../src/services/api"
 import get from "lodash";
 
 export default function SignUp1({ navigation }) {
+    const [user, setUser] = useState('')
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [passwordInformation, setPasswordInformation] = useState({ message: "", color: "" });
-    const [user, setUser] = useState('')
 
+    const [userInfo, setUserInfo] = useState({ message: "", color: "" });
+    const [passwordInformation, setPasswordInformation] = useState({ message: "", color: "" });
+    const [confSenhaInfo, setConfSenhaInfo] = useState({ message: "", color: "" });
+    
     // Verificação de senha forte ou fraca
     const verifyPassword = (text) => {
+
         if (!text) {
             setPasswordInformation({ message: '', color: '' });
             return;
@@ -31,17 +35,23 @@ export default function SignUp1({ navigation }) {
             setPasswordInformation({ message: 'Senha forte', color: 'red' });
         }
     };
+
+    // Manipulador de evento para o campo de senha
+    const handlePasswordChange = (text) => {
+        setPassword(text);
+        verifyPassword(text);
+    };
     
-    /*
+    
     const handleSubmit = async () => {
         let formErrors = false;
 
         if (user.length < 3 || user.length > 255) {
-            Toast.show({ type: 'warn', text1: 'O nome deve ter entre 3 e 255 caracteres.' });
+            setUserInfo({ message:'O nome deve ter entre 3 e 255 caracteres.', color: 'red' });
             formErrors = true;
         }
         if (password !== confirmPassword) {
-            Toast.show({ type: 'warn', text1: 'A senha e a confirmação de senha não coincidem.' });
+            setConfSenhaInfo({ message: 'A senha e a confirmação de senha não coincidem.', color: 'red' });
             formErrors = true;
         }
 
@@ -52,20 +62,22 @@ export default function SignUp1({ navigation }) {
                 user,
                 password,
             });
-            Toast.show({ type: 'success', text1: 'Registrado com sucesso!' });
+            Alert.alert('Sucesso', 'Usuario registrado com sucesso', [
+                {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+                },
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ]);
+
             navigation.navigate('Login'); // Navigate to the login screen
+
         } catch (err) {
             const errors = err.response?.data?.errors || [];
-            errors.forEach((error: string) => Toast.show({ type: 'error', text1: error }));
+            //errors.forEach((error: string) => Toast.show({ type: 'error', text1: error })); //falta consertar apenas isso
         }
-    }*/
-
-    // Manipulador de evento para o campo de senha
-    const handlePasswordChange = (text) => {
-        setPassword(text);
-        verifyPassword(text);
-    };
-
+    }
 
     return (
         <VStack flex={1} alignItems='center' p={8} bg={'white'}>
@@ -81,29 +93,20 @@ export default function SignUp1({ navigation }) {
 
                     <FormControl.Label>E-mail ou matrícula</FormControl.Label>
                     <InputDefault value={user} onChangeText={setUser}/>
+                    <Text marginBottom={2} color={userInfo.color}>{userInfo.message}</Text>
 
                     <FormControl.Label>Senha</FormControl.Label>
                     <InputDefault value={password} onChangeText={handlePasswordChange}/>
-
-                    {/* 
-                    <Input
-                        size='lg'
-                        w='100%'
-                        h='40px'
-                        borderRadius='lg'
-                        bgColor='gray.300'
-                        onChangeText={handlePasswordChange}
-                    />
-                    */}
                     <Text marginBottom={2} color={passwordInformation.color}>{passwordInformation.message}</Text>
 
                     <FormControl.Label>Confirmar senha</FormControl.Label>
                     <InputDefault value={confirmPassword} onChangeText={setConfirmPassword}/>
+                    <Text marginBottom={2} color={confSenhaInfo.color}>{confSenhaInfo.message}</Text>
 
                 </FormControl>
             </Box>
 
-            <Button backgroundColor='purple.500' w='100%' borderRadius='lg' marginBottom={4} >{/*onPress={handleSubmit}*/}
+            <Button backgroundColor='purple.500' w='100%' borderRadius='lg' marginBottom={4} onPress={handleSubmit}>
                 Cadastrar
             </Button>
 
