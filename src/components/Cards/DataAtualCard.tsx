@@ -18,7 +18,7 @@ export default function DataAtualCard() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        
+        marginBottom: 32,
         marginHorizontal: 32,
         width: '100%',
         gap: 32,
