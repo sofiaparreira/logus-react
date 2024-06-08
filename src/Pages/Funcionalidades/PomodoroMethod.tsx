@@ -42,24 +42,17 @@ export default function PomodoroMethod() {
         setIsRunning(!isRunning);
     };
 
+    const resetTimer = () => {
+        setIsRunning(false);
+        setTimeLeft(duration);
+        setProgress(1);
+    };
+
     return (
         <View bg='purple.500' flex={1}>
             <Topbar />
             <ScrollView bg='white' borderTopRadius={32}>
                 <TitleFuncionalidades props={'Método Pomodoro'} />
-                <Input 
-                    marginTop={8} 
-                    bg={'gray.100'} 
-                    borderColor={'coolGray.200'} 
-                    borderWidth={2} 
-                    width={72} 
-                    margin={'auto'} 
-                    borderRadius={24} 
-                    h={10} 
-                    placeholder="Selecione sua tarefa" 
-                    fontSize={'md'} 
-                    textAlign={'center'}
-                />
                 
                 <View style={styles.timerContainer}>
                     <Progress.Circle
@@ -75,7 +68,8 @@ export default function PomodoroMethod() {
                     />
                 </View>
                 <Box style={styles.boxButtons}>
-                    <ButtonPurpleDefault onPress={toggleTimer} textButton={isRunning ? 'Pause' : 'Start'} />
+                    <ButtonPurpleDefault onPress={toggleTimer} textButton={isRunning ? 'Pause' : 'Start'} width={56} />
+                    <ButtonPurpleDefault onPress={resetTimer} textButton={'Reset'} width={24} />
                 </Box>
             </ScrollView>
         </View>
@@ -83,20 +77,26 @@ export default function PomodoroMethod() {
 }
 
 const styles = StyleSheet.create({
+    btn: {
+        marginRight: 32,
+    },
     timerContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 64,
-        marginBottom: 32,
+        marginTop: 80,
+        marginBottom: 64,
     },
     timerText: {
         fontSize: 24,
         marginTop: 10,
     },
     boxButtons: {
+        backgroundColor: 'white',
+        display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center', 
+        justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20, 
+        marginTop: 20,
+
     }
 });
