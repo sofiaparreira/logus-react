@@ -30,9 +30,9 @@ export default function SignUp1({ navigation }) {
         const hasUpperCase = /[A-Z]/.test(text);
         const symbols = "!@#$%^&*()-_=+[]{}|;:',.<>?";
         if (text.length < 6 && !hasUpperCase || text.length < 6 && !symbols) {
-            setPasswordInformation({ message: 'Senha fraca', color: 'green' });
+            setPasswordInformation({ message: 'Senha fraca', color: 'red' });
         } else {
-            setPasswordInformation({ message: 'Senha forte', color: 'red' });
+            setPasswordInformation({ message: 'Senha forte', color: 'green' });
         }
     };
 
@@ -75,7 +75,7 @@ export default function SignUp1({ navigation }) {
 
         } catch (err) {
             const errors = err.response?.data?.errors || [];
-            //errors.forEach((error: string) => Toast.show({ type: 'error', text1: error })); //falta consertar apenas isso
+            // errors.forEach((error: string) => Toast.show({ type: 'error', text1: error })); //falta consertar apenas isso
         }
     }
 
